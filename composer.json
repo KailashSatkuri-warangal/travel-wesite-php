@@ -1,0 +1,11 @@
+{
+    "require": {
+        "google/apiclient": "^2.0",
+        "swiftmailer/swiftmailer": "^6.3",
+        "symfony/mailer": "^5.0",
+        "guzzlehttp/guzzle": "^6.2",
+        "phpmailer/phpmailer": "^6.9",
+        "mpdf/mpdf": "^6.1",
+        "bacon/bacon-qr-code": "^3.0"
+    }
+}

@@ -1,0 +1,1267 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+:root {
+    --primary-color: #3d5cb8;
+    --primary-color-dark: #334c99;
+    --text-dark: #0f172a;
+    --text-light: #64748b;
+    --extra-light: #f1f5f9;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --bg-color-light: #ffffff;
+    --text-color-light: #333333;
+    --bg-color-dark: #1a1a1a;
+    --text-color-dark: #ffffff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav {
+    max-width: none;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Main navigation links */
+.nav__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__links li {
+    margin-right: 20px;
+    position: relative;
+}
+
+.nav__links li a {
+    margin-right: inherit;
+    text-decoration: none;
+    color: #64748b;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav__links li a:hover {
+    color: #007bff; /* Change color on hover */
+    transform: translateY(-3px);
+}
+
+/*nav sub menu*/
+.nav__links .sub-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.nav__links .parent:hover .sub-menu {
+    display: block;
+}
+
+.nav__logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-button {
+    margin-left: auto;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+}
+
+/* Example animation for nav-bar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav {
+    animation: fadeIn 0.5s ease; /* Apply animation to the nav element */
+}
+
+.sub-menu a {
+    padding: 0.5rem 1rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+}
+
+.sub-menu a:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+/*top rgb*/
+#top-section {
+    position: fixed;
+    top: auto;
+    height: 10px;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    transition: background-color 0.3s, width 0.3s;
+}
+
+/* popup */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Background blur effect */
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease;
+    /* Ensure flexbox for centering content
+    display: none;*/
+}
+
+.popup-content {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    margin: auto;
+    padding: 50px;
+    border: 1px solid #888;
+    width: 70%;
+    max-width: 600px; /* Set max-width for the content */
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.5s ease;
+}
+
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.video-container {
+    height: 50%;
+    overflow: hidden;
+    position: relative;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+}
+
+.popup-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5%;
+}
+.login-form {
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+}
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.login-form-container form label {
+    font-size: 1.5rem;
+}
+
+.login-form input[type="submit"] {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form-container form .btn {
+    display: block;
+    width: 100%;
+}
+
+.login-form-container form p {
+    padding: .5rem 0;
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.login-form-container form p a {
+    color: var(--orange);
+}
+
+.login-form-container form p a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+.login-form-container #form-close {
+    position: absolute;
+    top: 2rem; right: 3rem;
+    font-size: 5rem;
+    color: #fff;
+    cursor: pointer;
+}
+.login-form input[type="submit"]:hover {
+    background-color: var(--primary-color-dark);
+}
+input[type="checkbox"] {
+    margin-right: 5px; /* Space between checkbox and label */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Buttons */
+.nav-button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-button .btn {
+    padding: 0.75rem 2rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--primary-color);
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.nav-button .btn1 {
+    padding: 0.75rem 2rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    background-color: var(--white);
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.nav-button .btn1:hover {
+    background-color: var(--bs-primary-bg-subtle);
+}
+.nav-button .btn:hover {
+    background-color: var(--primary-color-dark);
+}
+.btn1 {
+    padding: 0.75rem 2rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn {
+    padding: 0.75rem 2rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--primary-color);
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--primary-color-dark);
+}
+
+@media (max-width: 900px) {
+    nav .btn {
+        display: none;
+    }
+}
+
+
+/* Main Content Styles */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.sub-menu li {
+    display: block;
+}
+.sub-menu a {
+    display: block;
+}
+
+.sub-menu li:hover {
+    background-color: #f4f4f4;
+}
+.parent:hover .sub-menu {
+    display: block;
+}
+
+/* content images */
+.header__container {
+    margin: 30px;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Base styles */
+.header__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+.header__content {
+    text-align: center;
+}
+
+.section__header {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.booking__nav {
+    max-width: 500px;
+    margin-left: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent; /* Remove background color */
+    border-radius: 10px;
+    flex-wrap: wrap;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for better visibility */
+}
+
+.booking__nav span {
+    flex: 1 1 auto;
+    text-align: center;
+    color: var(--primary-color);
+    background-color: transparent; /* Remove background color */
+    cursor: pointer;
+    padding: 20px; /* Increase padding for larger boxes */
+    border: 0.2px solid black; /* Very thin border */
+    margin: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.booking__nav span:hover {
+    background-color: var(--primary-color); /* Change background on hover */
+    color: var(--white); /* Change text color on hover */
+}
+.booking__nav span.active {
+    color: var(--white);
+    background-color: var(--primary-color);
+    cursor: pointer; /* Ensure the cursor changes to pointer on hover */
+}
+
+.form__group {
+
+    display: none; /* Hide all forms by default */
+    padding: 10px; /* Adjust padding as needed */
+}
+
+.form__group.active {
+    display: block; /* Display active form */
+}
+.booking__container {
+    border-radius: 2rem;
+    border: 1px solid var(--extra-light);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+    padding-top: 100px;
+    margin: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.booking__container form {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) auto;
+    gap: 1rem;
+
+}
+.booking__nav span {
+    cursor: pointer;
+}
+.form__group.disabled {
+    display: none;
+}
+.booking__nav span:hover + form,
+.form__group.active {
+    display: block; /* Show form when span is hovered or form is active */
+}
+
+.booking__container .input__content {
+    width: 100%;
+}
+
+.booking__container .form__group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.booking__container .form__group span {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    background-color: var(--extra-light);
+    border-radius: 1rem;
+}
+
+.booking__container .input__group {
+    width: 100%;
+    position: relative;
+}
+
+.booking__container label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.booking__container input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    color: var(--text-dark);
+}
+
+.booking__container input:focus ~ label {
+    font-size: 0.8rem;
+    top: 0;
+}
+
+.booking__container .form__group p {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.booking__container .btn {
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.input__group {
+    display: flex;
+}
+
+.input__group input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    color: var(--text-dark);
+    margin-right: 10px; /* Add spacing between inputs */
+}
+
+.input__group label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input__group input:focus ~ label {
+    font-size: 0.8rem;
+    top: 0;
+}
+.input__group input:focus + label,
+.input__group input:not(:placeholder-shown) + label,
+.input__group input:valid + label {
+    top: -12px;
+    left: 10px;
+    font-size: 12px;
+    color: #66afe9;
+}
+/* Date input specific styling */
+.date-input {
+    padding: 10px 10px 10px 30px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.date-input:focus {
+    border-color: #66afe9;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+/* Icon styling */
+.form__group span i {
+    font-size: 20px;
+    color: #999;
+}
+/* about us */
+.heading {
+    text-align: center;
+    padding: 2.5rem 0;
+    text-transform: capitalize;
+
+}
+
+.heading span {
+    font-size: 3.5rem;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: .5rem;
+    padding: .2rem 1rem;
+}
+
+.heading span.space {
+    background: none;
+}
+.counter-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.elementor-counter {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column-reverse;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.elementor-counter .elementor-counter-number {
+   /* flex-grow: var(--counter-number-grow, 0);*/
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.elementor-counter .elementor-counter-number-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.elementor-counter .elementor-counter-number-prefix,
+.elementor-counter .elementor-counter-number-suffix {
+    font-size: 24px;
+}
+
+.elementor-counter .elementor-counter-title {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+/* Specific styles for different counters */
+.counter1 .elementor-counter-title {
+    color: var(--primary-color);
+}
+
+.counter2 .elementor-counter-title {
+    color: var(--primary-color);
+}
+
+.counter3 .elementor-counter-title {
+    color: var(--primary-color);
+}
+
+.counter4 .elementor-counter-title {
+    color: var(--primary-color);
+}
+/* travel support */
+.plan__container .subheader {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-dark);
+    letter-spacing: 5px;
+}
+
+.plan__container .section__header {
+    text-align: center;
+    font-size: 3rem;
+    line-height: 4rem;
+    margin-bottom: 1rem;
+}
+
+.plan__container .description {
+    text-align: center;
+    color: var(--text-light);
+}
+
+.plan__grid {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.plan__content .number {
+    display: inline-block;
+    padding: 5px 15px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--white);
+    background-color: var(--primary-color);
+    border-radius: 2rem;
+}
+
+.plan__content .number:nth-child(4) {
+    background-color: #e98b6d;
+}
+
+.plan__content .number:nth-child(7) {
+    background-color: #ffcca3;
+}
+
+.plan__content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.plan__content p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.plan__image {
+    position: relative;
+}
+
+.plan__image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 10rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.plan__image img:nth-child(1) {
+    max-width: 250px;
+    transform: translate(calc(-50% - 9rem), calc(-50% + 5rem));
+    z-index: 3;
+}
+
+.plan__image img:nth-child(2) {
+    max-width: 260px;
+    transform: translate(-50%, calc(-50% - 5rem));
+    z-index: 2;
+}
+
+.plan__image img:nth-child(3) {
+    max-width: 230px;
+    transform: translate(calc(-50% + 9rem), calc(-50% + 5rem));
+}
+/* memories */
+.memories {
+    background-color: var(--extra-light);
+}
+
+.memories__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.memories__header .section__header {
+    max-width: 600px;
+}
+
+.memories__header .view__all {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    background: transparent;
+    white-space: nowrap;
+    outline: none;
+    border: 1px solid var(--text-light);
+    border-radius: 2rem;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.memories__grid {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+}
+
+.memories__card {
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 5rem;
+    background-color: var(--white);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.05);
+}
+
+.memories__card span {
+    display: inline-block;
+    padding: 20px 32px;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    color: var(--white);
+    background-color: var(--primary-color);
+    border-radius: 100%;
+}
+
+.memories__card:nth-child(2) span {
+    background-color: #e98b6d;
+}
+
+.memories__card:nth-child(3) span {
+    background-color: #ffcca3;
+}
+
+.memories__card h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.memories__card p {
+    color: var(--text-light);
+    line-height: 1.75rem;
+}
+section {
+    padding: 2rem 9%;
+}
+
+@media (max-width: 991px) {
+    section {
+        padding: 2rem;
+    }
+}
+/* lounge of car catgeries */
+.lounge__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.lounge__grid {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.lounge__image {
+    position: relative;
+}
+
+.lounge__image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 20rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+img {
+    width: 100%;
+    display: flex;
+}
+.lounge__image img:nth-child(1) {
+    max-width: 400px;
+    transform: translate(calc(-50% - 3rem), -50%);
+}
+
+.lounge__image img:nth-child(2) {
+    max-width: 300px;
+    transform: translate(calc(-50% + 6rem), calc(-50% + 7rem));
+}
+
+.lounge__details h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.lounge__details p {
+    color: var(--text-light);
+}
+/* sample revivers */
+.travellers__grid {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.travellers__card {
+    border-radius: 5rem;
+    overflow: hidden;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.travellers__card__content {
+    position: relative;
+    padding: 1rem;
+    text-align: center;
+}
+
+.travellers__card__content img {
+    position: absolute;
+    max-width: 70px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid var(--extra-light);
+    border-radius: 100%;
+}
+
+.travellers__card__content h4 {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.travellers__card__content p {
+    font-weight: 500;
+    color: var(--text-light);
+}
+/* back to top  */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.car-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.links-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1001;
+    transition: all 0.3s ease;
+}
+
+.links-menu .menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.links-menu .menu-items a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.links-menu .menu-items a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+.overlay-active .content {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+/* subscribe */
+.subscribe {
+    position: relative;
+    overflow: hidden;
+    background-color: #3d5cb870; /* Adjust as needed */
+    padding: 80px 0;
+}
+
+.subscribe__container {
+    max-width: 800px;
+    max-height: 800px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 60px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.subscribe__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 20px;
+}
+
+.subscribe__form input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Soft shadow for input */
+}
+
+.subscribe__form button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.subscribe__form button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Animation for cracker effect */
+.cracker {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    opacity: 0;
+    animation: cracker-pop 0.5s ease forwards;
+    animation-delay: 2s; /* Delay to appear */
+}
+
+@keyframes cracker-pop {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0);
+    }
+}
+
+/* Animation for moving car */
+@keyframes moveCar {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.moving-car {
+    display: inline-block;
+    animation: moveCar 3s ease-in-out infinite;
+}
+/* footer */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 20px 0;
+    position: sticky;
+}
+
+.footer__container {
+    display: grid;
+    grid-template-columns: 2fr repeat(2, 1fr);
+    gap: 5rem;
+    max-width: var(--max-width);
+    margin: auto;
+}
+
+.footer__col h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.footer__col h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.footer__col p {
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer__col p:hover {
+    color: var(--extra-light);
+}
+
+.footer__bar {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-top: 1px solid var(--extra-light);
+    max-width: var(--max-width);
+    margin: auto;
+}
+
+.footer__bar p {
+    font-size: 0.9rem;
+    color: var(--extra-light);
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.socials span {
+    font-size: 1.2rem;
+    color: var(--extra-light);
+}
+
+@media (max-width: 600px) {
+    .footer__container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__bar {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav__links {
+        flex-direction: column;
+        display: none;
+
+    }
+
+    .nav__links.active {
+        display: flex;
+    }
+
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer__bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Adjustments for screens up to 480px wide (typical smartphones) */
+    body {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    /* Adjustments for small screens like smartphones */
+    body {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Adjustments for medium screens like tablets */
+    body {
+        font-size: 16px;
+    }
+}
+@media only screen and (min-width: 1025px) {
+    body {
+        font-size: 18px;
+    }
+}
+.user-profile {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.user-profile .btn {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.user-profile .btn:hover {
+    color: #ffc107;
+}
+
+.user-profile .sub-menu {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    top: 100%;
+    left: 0;
+}
+
+.user-profile .sub-menu li {
+    display: block;
+}
+
+.user-profile .sub-menu li a {
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.user-profile .sub-menu li a:hover {
+    background-color: #555;
+}

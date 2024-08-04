@@ -1,0 +1,273 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Profile Styles */
+.profile-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-header img {
+    border: 3px solid #007bff;
+    transition: transform 0.3s ease;
+    width: 80px;  /* Reduced size */
+    height: 80px; /* Reduced size */
+}
+
+.profile-header img:hover {
+    transform: scale(1.1);
+}
+
+.profile-header h2 {
+    margin: 0;
+    color: #333;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile-details .detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-details .detail input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.profile-details .detail input:focus {
+    border-color: #007bff;
+}
+
+.profile-details .emoji {
+    font-size: 1.5em;
+}
+
+.profile-details button {
+    align-self: flex-start;
+}
+
+/* Tabs Styles */
+.nav-tabs .nav-link {
+    color: #007bff;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.tab-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Order Box Styles */
+.order-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.order-box:hover {
+    transform: scale(1.02);
+}
+
+.order-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.order-details h3 {
+    margin: 0;
+    color: #333;
+}
+
+.order-details button {
+    background-color: #5a6268;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.order-details button svg {
+    transition: transform 0.3s ease;
+}
+
+.order-details button[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-top: 2px solid #007bff;
+    border-radius: 0;
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+
+.card-body p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-details .detail {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-details .detail input {
+        width: 100%;
+    }
+}
+
+/* Accordion Styles */
+.accordion {
+    background-color: #f1f1f1;
+    color: #333;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.accordion:hover {
+    background-color: #ddd;
+}
+
+.panel {
+    padding: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    max-height: 0;
+}
+
+.panel.active {
+    max-height: 500px; /* Adjust height based on your content */
+}
+
+.panel .card {
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.booking-details {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.car-details {
+    background-color: #fff;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-details {
+    background-color: #fff;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
