@@ -49,7 +49,7 @@
             // Check if message is posted from chat input
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Replace with your OpenAI API key for GPT-4
-                $apiKey = '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';
+                //--------------------------> //$apiKey = 'your openai key admin';
 
                 // OpenAI API endpoint for GPT-4 (e.g., davinci-4)
                 $endpoint = 'https://api.openai.com/v1/engines/davinci-4/completions';

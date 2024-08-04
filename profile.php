@@ -24,6 +24,7 @@ if (!$user) {
     die("User not found");
 }
 
+
 $stmt->close();
 $conn->close();
 ?>
